@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Times de Futebol em Python com Orientação a Obejeto
+# Sistema de Gerenciamento de Times de Futebol em Python com Orientação a Objeto
 Sistema de Gerenciamento simples desenvolvido em Python, no qual é possível:
  - Inserir um time;
  - Listar apenas um time cadastrado por vez;
