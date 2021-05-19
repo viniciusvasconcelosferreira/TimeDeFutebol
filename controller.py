@@ -1,26 +1,29 @@
 from team import TimeDeFutebol
 
 
-class Controller():
-    def inserir(nome, estado, titulos, folhaPagamento):
-        return TimeDeFutebol(nome, estado, titulos, folhaPagamento)
+class Controller:
+    def inserir(nome, estado, titulos, folha_pagamento):
+        return TimeDeFutebol(nome, estado, titulos, folha_pagamento)
 
     def listar(listaTimes):
-        print('NOME | ESTADO | QTD. TITULOS | FOLHA DE PGTO. ')
+        print('	NOME 	 | ESTADO | QTD. TITULOS | FOLHA DE PGTO.')
         print('--------------------------------------')
         for time in listaTimes:
-            print(f'{time.nome} | {time.estado} | {time.titulos} | R$ {time.folhaPagamento}')
+            print(
+                f'{time.getNome()} 	 | {time.getEstado()}     | {time.getTitulos()}\t\t\t | R$ {time.getFolhaPagamento():.2f}')
             print('--------------------------------------')
 
     def pesquisaNome(listaTimes, nome):
         contador = 0
         for time in listaTimes:
-            if time.nome == nome:
-                print(f'Nome: {time.nome}')
-                print(f'Estado: {time.estado}')
-                print(f'Qtd. de Titulos: {time.titulos}')
-                print(f'Valor da Folha de Pgto.: {time.folhaPagamento}')
+            if time.getNome() == nome:
+                print(f'Nome: {time.getNome()}')
+                print(f'Estado: {time.getEstado()}')
+                print(f'Qtd. de Titulos: {time.getTitulos()}')
+                print(f'Valor da Folha de Pgto.: R$ {time.getFolhaPagamento():.2f}')
                 break
+            else:
+                print(f'Time {nome} não cadastrado no sistema!')
             contador += 1
 
     def deleteAll(listaTimes):
@@ -33,8 +36,8 @@ class Controller():
     def deleteNome(listaTimes, nome):
         if len(listaTimes) != 0:
             cont = 0
-            for tel in listaTimes:
-                if tel.getNome() == nome:
+            for time in listaTimes:
+                if time.getNome() == nome:
                     listaTimes.pop(cont)
                     return f'Time {nome} removido com sucesso!'
                 else:

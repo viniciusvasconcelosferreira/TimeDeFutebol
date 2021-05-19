@@ -1,6 +1,6 @@
 from controller import Controller
 
-times = []
+timesDeFutebol = []
 
 print('|=============================|')
 print('|BEM VINDO A LISTAGEM DE TIMES|')
@@ -22,25 +22,53 @@ while True:
     opcao = int(input('Escolha uma das opções acima: '))
 
     if opcao == 1:
+        print('|================================|')
+        print('|        CADASTRO DE TIME        |')
+        print('|================================|')
         nome = input('Entre com o nome do time: ')
         estado = input('Entre com o estado ao qual o time pertence: ')
         titulos = int(input('Entre com a quantidade de titulos que o time possui: '))
         folha_de_pagamento = float(input('Entre com o valor da folha de pagamento do time: '))
-        times.append(Controller.inserir(nome, estado, titulos, folha_de_pagamento))
+        timesDeFutebol.append(Controller.inserir(nome, estado, titulos, folha_de_pagamento))
+        print(f'Time {nome} cadastrado com sucesso!')
+        print()
     elif opcao == 2:
-        Controller.listar(times)
+        print('|=================================|')
+        print('|        LISTAGEM DE TIMES        |')
+        print('|=================================|')
+        Controller.listar(timesDeFutebol)
+        print()
     elif opcao == 3:
+        print('|================================|')
+        print('|        PESQUISA DE TIME        |')
+        print('|================================|')
         nome = input('Digite o nome do time para a pesquisa: ')
-        Controller.pesquisaNome(times, nome)
+        Controller.pesquisaNome(timesDeFutebol, nome)
+        print()
     elif opcao == 4:
-        print(f"Existem {'0' if len(times) == 0 else len(times)} times cadastrados no sistema")
+        print('|==================================|')
+        print('|            QUANTIDADE            |')
+        print('|        DE TIMES CADASTRADOS      |')
+        print('|            NO SISTEMA            |')
+        print('|==================================|')
+        print(f"Existem {'0' if len(timesDeFutebol) == 0 else len(timesDeFutebol)} times cadastrados no sistema")
+        print()
     elif opcao == 5:
+        print('|================================|')
+        print('|   ATUALIZAR CADASTRO DE TIME   |')
+        print('|================================|')
         pass
     elif opcao == 6:
+        print('|================================|')
+        print('|        EXCLUSÃO DE TIME        |')
+        print('|================================|')
         nome = input('Digite o nome do time para exclusão: ')
-        print(Controller.deleteNome(times, nome))
+        print(Controller.deleteNome(timesDeFutebol, nome))
     elif opcao == 7:
-        print(Controller.deleteAll(times))
+        print('|================================|')
+        print('|    ZERAR REGISTRO DOS TIMES    |')
+        print('|================================|')
+        print(Controller.deleteAll(timesDeFutebol))
     else:
         print('Obrigado e volte sempre!')
         break

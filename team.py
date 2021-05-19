@@ -1,38 +1,30 @@
 class TimeDeFutebol:
-    def __init__(self, nm_time, nm_estado, qtd_titulos, vl_folha):
-        self._nome = nm_time,
-        self._estado = nm_estado,
-        self._titulos = qtd_titulos
-        self._folhaPagamento = vl_folha
+    def __init__(self, nome, estado, titulos, folha_pagamento):
+        self.__nome = nome
+        self.__estado = estado
+        self.__titulos = titulos
+        self.__folha_pagamento = folha_pagamento
 
-    @property
-    def nome(self):
-        return self._nome
+    def getNome(self):
+        return self.__nome
 
-    @nome.setter
-    def nome(self, value):
-        self._nome = value
+    def setNome(self, value):
+        self.__nome = value
 
-    @property
-    def estado(self):
-        return self._estado
+    def getEstado(self):
+        return self.__estado
 
-    @estado.setter
-    def estado(self, value):
-        self._estado = value
+    def setEstado(self, value):
+        self.__estado = value
 
-    @property
-    def titulos(self):
-        return self._titulos
+    def getTitulos(self):
+        return self.__titulos
 
-    @titulos.setter
-    def titulos(self, value):
-        self._titulos = value
+    def setTitulos(self, value):
+        self.__titulos = value
 
-    @property
-    def folhaPagamento(self):
-        return self._folhaPagamento
+    def getFolhaPagamento(self):
+        return self.__folha_pagamento
 
-    @folhaPagamento.setter
-    def folhaPagamento(self, value):
-        self._folhaPagamento = value
+    def setFolhaPagamento(self, value):
+        self.__folha_pagamento = value
