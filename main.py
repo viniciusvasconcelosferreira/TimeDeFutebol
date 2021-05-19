@@ -57,7 +57,10 @@ while True:
         print('|================================|')
         print('|   ATUALIZAR CADASTRO DE TIME   |')
         print('|================================|')
-        pass
+        nome = input('Digite o nome do time para a atualização: ')
+        valor = float(input('Digite o novo valor da folha de pagamento do time: '))
+        print(Controller.atualizaFolha(timesDeFutebol, nome, valor))
+        print()
     elif opcao == 6:
         print('|================================|')
         print('|        EXCLUSÃO DE TIME        |')

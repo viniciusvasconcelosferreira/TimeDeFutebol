@@ -44,3 +44,14 @@ class Controller:
                     return 'Time não encontrado!'
         else:
             return 'Lista de times está vazia!'
+
+    def atualizaFolha(listaTimes, nome, valor):
+        if len(listaTimes) != 0:
+            for time in listaTimes:
+                if time.getNome() == nome:
+                    time.setFolhaPagamento(valor)
+                    return f'Valor da folha de pagamento do time {nome} atualizado com sucesso!'
+                else:
+                    return 'Time não encontrado!'
+        else:
+            return 'Lista de times está vazia!'
